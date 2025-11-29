@@ -1,0 +1,545 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCTV Security Systems</title>
+</head>
+<body>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+body {
+    background:black;
+    color:black ;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: blue;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+#00aaff
+nav a:hover {
+    color:dark blue;
+}
+
+/* Hero */
+.hero {
+    height: 20vh;
+    background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #00aaff;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #F74F69;
+}
+
+/* --- NEW PRODUCT SECTION (from your screenshot) --- */
+.products {
+    padding: 60px 20px;
+    background: #99191B;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.title-red {
+    color: black;
+}
+
+/* Product Cards */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.product-card {
+    width: 320px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    color: #0056D2;
+    margin-top: 15px;
+}
+
+.product-card p {
+    padding: 15px;
+    line-height: 1.6;
+}
+
+.learn-btn {
+    padding: 10px 20px;
+    background: #E63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.learn-btn:hover {
+    background: #c92f3c;
+}
+/* POPUP DESIGN */
+.popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.popup-content img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    float: right;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.about {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-box p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about-features {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    font-size: 17px;
+}
+
+.about-features div {
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.about-card {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.about-img {
+    width: 350px;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.about-details {
+    flex: 1;
+    padding-top: 20px;
+}
+
+/* New Contact Box Style */
+.contact {
+    padding: 50px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.contact-box {
+    background: #222;
+    padding: 25px;
+    width: 70%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.contact-box p {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.contact-box a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-box a:hover {
+    color: #F74F69;
+}
+
+@media (max-width: 768px) {
+    .contact-box {
+        width: 95%;
+    }
+.insta-card {
+    width: 320px;
+    border-radius: 15px;
+    margin-top: 15px;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.insta-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+}
+
+.insta-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+}
+#form-status {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .contact input, .contact textarea { width: 90%; }
+}
+</style>
+
+
+<!-- Header -->
+<header>
+    <div class="logo">Cctv Trusty Secure</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <h1>AD SECURE SOLUTION</h1>
+    <p>24/7 Protection for Home & Business</p>
+    <button class="btn" id="exploreBtn">Explore Products</button>
+</section>
+
+
+<!-- NEW PRODUCT SECTION (Like in your screenshot) -->
+<section id="products" class="products">
+    <h2>Live in the <span class="title-red">Future</span></h2>
+
+    <div class="product-container">
+
+        <!-- CCTV CAMERAS -->
+        <div class="product-card">
+            <img src="installation.webp">
+            <h3>CCTV CAMERAS</h3>
+            <p>
+                Our CCTV Cameras offer reliable, HD surveillance for both homes and businesses.
+                Features include motion detection, night vision, and remote access.
+            </p>
+            <button class="learn-btn">Learn more</button>
+        </div>
+
+        <!-- ATTENDANCE -->
+        <div class="product-card">
+            <img src="ATTENDANCE.jpg">
+            <h3>ATTENDANCE</h3>
+            <p>
+                Manage workforce attendance using fingerprint and facial recognition systems.
+                Reduce errors and gain real-time tracking insights.
+            </p>
+            <button class="learn-btn">Learn more</button>
+        </div>
+
+        <!-- SECURITY SYSTEMS -->
+        <div class="product-card">
+            <img src="SECURITY SYSTEMS.jpg">
+            <h3>SECURITY SYSTEMS</h3>
+            <p>
+                Stay safe with CCTV, alarm, and access-control systems.
+                Get 24/7 monitoring and complete remote protection.
+            </p>
+            <button class="learn-btn">Learn more</button>
+       
+
+    </div>
+        <!-- Existing Solar Products -->
+        <div class="product-card">
+            <img src=solar.jpg alt="Solar Panel">
+            <h3>Solar Panel Installation</h3>
+            <p>High-efficiency rooftop solar panels.</p>
+<button class="learn-btn">Learn more</button>
+
+        </div>
+
+              <!-- ⭐ NEW: Video Door Camera -->
+        <div class="product-card">
+            <img src="Video Door Camera.jpg" >
+             <h3>Video Door Camera</h3>
+            <p>HD door camera with two-way communication.</p>
+<button class="learn-btn">Learn more</button>
+
+        </div>
+
+        <!-- ⭐ NEW: Home Automation -->
+        <div class="product-card">
+            <img src="Home Automation System.jpg" >
+            <h3>Home Automation System</h3>
+            <p>Smart controls for lights, doors & appliances.</p>
+<button class="learn-btn">Learn more</button>
+
+        </div>
+<!-- PRODUCT POPUP BOX -->
+<div id="productPopup" class="popup">
+    <div class="popup-content">
+        <span id="closePopup" class="close-btn">&times;</span>
+        <h2 id="popupTitle"></h2>
+        <img id="popupImage" src="" alt="">
+        <p id="popupDescription"></p>
+    </div>
+</div>
+
+
+    </section>
+
+
+<!-- About Section -->
+<section id="about" class="about">
+    <h2>About AD Secure Solution</h2>
+
+    <div class="about-box">
+        <p>
+            At <strong>AD Secure Solution</strong>, we believe security is not just a service —  
+            it is a responsibility. With years of expertise in CCTV installation, home automation,  
+            solar security systems, and smart surveillance, we deliver technology that protects  
+            families, businesses, and properties 24/7.
+        </p>
+
+        <p>
+            From small homes to large commercial spaces, our team provides  
+            <strong>professional installation, trusted support, and high-quality products</strong>  
+            to ensure you stay safe at all times.
+        </p>
+
+        <div class="about-features">
+            <div>🔒 100% Trusted Security Services</div>
+            <div>📡 Smart CCTV & Solar Cameras</div>
+            <div>🏠 Home • 🏢 Office • 🛍️ Shops</div>
+            <div>🤝 Affordable & Reliable Support</div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>Who We Are</h2>
+
+    <div class="about-card">
+        <img src="installation.webp" class="about-img">
+
+        <div class="about-details">
+            <h3>We Secure What Matters</h3>
+            <p>
+                We specialize in advanced CCTV installation, smart home automation,  
+                video door security, and solar-powered surveillance.  
+            </p>
+            <p>
+                Our goal is simple —  
+                <strong>Provide top-quality protection with zero compromise.</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-box">
+
+        <p><strong>📞 Phone:</strong> <a href="tel:+919345580152">+91 9345580152</a></p>
+
+        <p><strong>📸 Instagram:</strong></p>
+<a href="https://www.instagram.com/aravind_cctv_1" target="_blank" class="insta-link">
+    <img src="D:\cctv\ins.jpg" class="insta-card" alt="Instagram Card">
+</a>
+        </p>
+
+        <p><strong>📧 Email:</strong>
+            aravinthk508@gmail.com        </p>
+
+        <p><strong>📍 Location:</strong></p>
+
+        <!-- Google Map -->
+        <iframe
+            src="https://www.google.com/maps?q=32%2C+Kattabomman+St%2C+Ganapathy%2C+Coimbatore,+Tamil+Nadu+641006&output=embed"
+            width="100%" height="300" style="border:0; border-radius:8px;">
+        </iframe>
+
+    </div>
+</section>
+
+<script>
+// PRODUCT POPUP FUNCTION
+document.querySelectorAll(".learn-btn").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        
+        const products = [
+            {
+                title: "CCTV Cameras",
+                img: "installation.webp",
+                desc: "High-definition CCTV cameras with night vision, motion detection, remote viewing & mobile alerts."
+            },
+            {
+                title: "Attendance System",
+                img: "ATTENDANCE.jpg",
+                desc: "Biometric fingerprint & face recognition attendance system for schools, offices & industries."
+            },
+            {
+                title: "Security Systems",
+                img: "SECURITY SYSTEMS.jpg",
+                desc: "Complete home & office security systems including alarms, sensors & access control."
+            },
+            {
+                title: "Solar Camera",
+                img: "solar.jpg",
+                desc: "Dual lens solar powered smart camera with 24/7 charging, PTZ control & mobile view."
+            },
+            {
+                title: "Video Door Camera",
+                img: "Video Door Camera.jpg",
+                desc: "Smart door camera with two-way audio, night vision & visitor recording."
+            },
+            {
+                title: "Home Automation",
+                img: "Home Automation System.jpg",
+                desc: "Smart lighting, door lock control, appliance automation & voice assistant integration."
+            }
+        ];
+
+        document.getElementById("popupTitle").innerText = products[index].title;
+        document.getElementById("popupImage").src = products[index].img;
+        document.getElementById("popupDescription").innerText = products[index].desc;
+
+        document.getElementById("productPopup").style.display = "flex";
+    });
+});
+
+// CLOSE POPUP
+document.getElementById("closePopup").onclick = function() {
+    document.getElementById("productPopup").style.display = "none";
+};
+
+// Contact Form Message
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("form-status").innerText = "Message sent successfully!";
+    document.getElementById("form-status").style.color = "#00ff88";
+    this.reset();
+});
+
+// Explore Products → Open Image
+document.getElementById("exploreBtn").addEventListener("click", function() {
+    window.open("images/images.png", "_blank");
+});
+</script>
+
+</body>
+</html>
